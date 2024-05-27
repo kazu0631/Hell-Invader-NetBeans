@@ -22,7 +22,7 @@ public class Sound {
         soundURL[5] = getClass().getResource("/res/sound/effect/damage00.wav");
         soundURL[6] = getClass().getResource("/res/sound/effect/graze.wav");
         soundURL[7] = getClass().getResource("/res/sound/effect/tan00.wav");
-        soundURL[8] = getClass().getResource("/res/sound/effect/tan02.wav");
+        soundURL[8] = getClass().getResource("/res/sound/effect/pldead00.wav");
         soundURL[9] = getClass().getResource("/res/sound/music/Compression.wav");
     }
 

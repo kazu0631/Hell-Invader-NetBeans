@@ -15,17 +15,16 @@ public class Enemy extends GameObject {
     public ArrayList<EnemyBullet> enemyBullets = new ArrayList<>();
 
     public int hp;
-    int speed;
+    
     int cooldown, threshhold;
 
     int timer = 0;
 
     public Enemy(int x, GamePanel gp) {
-        super(x, -gp.TILE_SIZE*2, gp.TILE_SIZE*2, gp.TILE_SIZE*2);
+        super(x, -gp.TILE_SIZE*2, gp.TILE_SIZE*2, gp.TILE_SIZE*2, 0, 2);
         this.gp = gp;
 
         hp = 5;
-        speed = 2;
 
         threshhold = 100;
         cooldown = threshhold;
@@ -46,8 +45,9 @@ public class Enemy extends GameObject {
 
     public void update() {
 
-        y += speed;
-
+        y += vy;
+        
+        // update bullets
         for(int i = 0; i < enemyBullets.size(); i++) {
             enemyBullets.get(i).update();
 
@@ -55,7 +55,8 @@ public class Enemy extends GameObject {
                 enemyBullets.remove(enemyBullets.get(i));
             }
         }
-
+        
+        // control fire rate
         cooldown++;
         if(cooldown >= threshhold) {
             gp.playSE(6);
@@ -66,11 +67,13 @@ public class Enemy extends GameObject {
     }
 
     public void draw(Graphics g) {
-
+        
+        // draw enemy bullets
         for(int i = 0; i < enemyBullets.size(); i++) {
             enemyBullets.get(i).draw(g);
         }
-
+        
+        // draw enemy
         g.drawImage(image, x, y, width, height, null);
     }
 }

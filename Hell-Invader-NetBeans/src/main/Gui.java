@@ -126,9 +126,12 @@ public class Gui {
     }
 
     public void drawBackground() {
-
+        
+        g2.setColor(Color.black);
+        g2.fillRect(0, 0, gp.SCREEN_WIDTH, gp.SCREEN_HEIGHT);
+        
         g2.setFont(strongGamer.deriveFont(Font.PLAIN, 320F));
-        String text = String.valueOf(gp.wall.speed - 5);
+        String text = String.valueOf(gp.wall.vy - 5);
         int x = getXForCentered(text);
         int y = gp.SCREEN_HEIGHT/2 + gp.TILE_SIZE/2;
         g2.setColor(new Color(40, 43, 51));

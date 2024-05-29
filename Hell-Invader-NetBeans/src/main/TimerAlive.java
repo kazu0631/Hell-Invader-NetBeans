@@ -35,12 +35,12 @@ public class TimerAlive {
         int seconds = 0;
         int mili = 0;
 
-        if (sec >= 3600) // if we have an hour or more
+        if (sec >= 3600) // if we have a min or more
         {
             minutes = sec / 3600;
-            remainderOfMinutes = sec % 3600;        // could be more or less than a min
+            remainderOfMinutes = sec % 3600;        // could be more or less than a sec
 
-            if (remainderOfMinutes >= 60)   //check if remainder is more or equal to a min
+            if (remainderOfMinutes >= 60)   //check if remainder is more or equal to a sec
             {
                 seconds = remainderOfMinutes / 60;
                 mili = remainderOfMinutes % 60;

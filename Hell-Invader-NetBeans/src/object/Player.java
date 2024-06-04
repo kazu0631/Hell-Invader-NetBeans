@@ -124,6 +124,9 @@ public class Player extends GameObject {
         if(keyH.up && keyH.right) {
             direction = "right";
         }
+        if(keyH.left && keyH.right) {
+            direction = "idle";
+        }
         if(!keyH.left && !keyH.right) {
             direction = "idle";
         }

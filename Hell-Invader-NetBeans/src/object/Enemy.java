@@ -18,8 +18,6 @@ public class Enemy extends GameObject {
     
     int cooldown, threshhold;
 
-    int timer = 0;
-
     public Enemy(int x, GamePanel gp) {
         super(x, -gp.TILE_SIZE*2, gp.TILE_SIZE*2, gp.TILE_SIZE*2, 0, 2);
         this.gp = gp;

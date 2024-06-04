@@ -27,7 +27,7 @@ public class EnemyBullet extends GameObject {
 
         try {   /*carrega os quadros de animação da bala inimiga a partir de um arquivo de imagem 
                   A spritesheet é dividida em quatro subimagens, cada uma representando um quadro de animação diferente.
-                  As subimagens são armazenadas na spritesmatriz.*/
+                  As subimagens são armazenadas no vetor sprites.*/
 
             BufferedImage spritesheet = ImageIO.read(getClass().getResourceAsStream("/res/sprite/enemy_bullet_sprite.png"));
             sprites[0] = spritesheet.getSubimage(0, 0, 8, 8);

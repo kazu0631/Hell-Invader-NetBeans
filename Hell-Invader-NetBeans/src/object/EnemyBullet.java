@@ -13,8 +13,8 @@ public class EnemyBullet extends GameObject {
     BufferedImage[] sprites = new BufferedImage[4];
     BufferedImage image;
 
-    int spriteCounter = 0;
-    int spriteNum = 1;
+    int spriteCounter = 0;      // um número inteiro que monitora o contador de quadros de animação.
+    int spriteNum = 1;          //mudar imagem, um número inteiro que determina qual quadro de animação exibir.
 
     public EnemyBullet(int x, int y, int vx, int vy, GamePanel gp) {
         super(x, y, gp.TILE_SIZE/4, gp.TILE_SIZE/4, vx, vy);
@@ -25,7 +25,9 @@ public class EnemyBullet extends GameObject {
 
     public void getImage() {
 
-        try {
+        try {   /*carrega os quadros de animação da bala inimiga a partir de um arquivo de imagem 
+                  A spritesheet é dividida em quatro subimagens, cada uma representando um quadro de animação diferente.
+                  As subimagens são armazenadas na spritesmatriz.*/
 
             BufferedImage spritesheet = ImageIO.read(getClass().getResourceAsStream("/res/sprite/enemy_bullet_sprite.png"));
             sprites[0] = spritesheet.getSubimage(0, 0, 8, 8);
